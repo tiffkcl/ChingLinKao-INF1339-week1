@@ -1,0 +1,56 @@
+<html>
+    <head>
+    <title>Version 5</title>
+    <style>
+        .standardTable {border: solid;
+                        border-collapse: collapse;}
+        .blackbox {border:solid;
+                   height: 100px;
+                   width: 100px;
+                   text-align: center;
+                   background-color: black;
+                   border-color: white;
+                   color: yellow;}
+    </style>
+    <script>
+        function display(number) {
+            //for now just display the number in a <p> element
+            document.getElementById("decimal_input").innerHTML=number
+            var bcd = dec2bin(number)
+            document.getElementById("binary_output").innerHTML=bcd
+        }
+        function dec2bin(decimal) {
+            //substitute a non-algorithmic solution
+            //for the short term (replace it later)
+            var binary_numbers=['0000','0001','0010','0011','0100','0101','0110','0111','1000','1001']
+            return (binary_numbers[decimal])
+        }
+    </script>
+    </head>
+    <body>
+        <h1>HELLO UNIVERSE, THIS IS MY 7 SEGMENT DISPLAY DRIVER SIMULATION</h1>
+        <h2>Version 5 Adding Input Keypad</h2>
+        <table class="standardTable">
+            <tr>
+                <td class="blackbox"><h3>Keypad</h3>
+                <button type="button" onclick="display(1)">1</button>
+                <button type="button" onclick="display(2)">2</button>
+                <button type="button" onclick="display(3)">3</button>
+                <button type="button" onclick="display(4)">4</button>
+                <button type="button" onclick="display(5)">5</button>
+                <button type="button" onclick="display(6)">6</button>
+                <button type="button" onclick="display(7)">7</button>
+                <button type="button" onclick="display(8)">8</button>
+                <button type="button" onclick="display(9)">9</button>
+                <button type="button" onclick="display(0)">0</button>
+                </td>
+                <td class="blackbox"><h3>Decimal to Binary</h3>
+                    <p id="decimal_input">???</p>
+                    <p id="binary_output">???</p></td>
+                <td class="blackbox">Binary to SSD Signals</td>
+                <td class="blackbox">Illuminate Segments</td>
+            </tr>
+        </table>
+        
+    </body>
+</html>
